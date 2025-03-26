@@ -1,1 +1,1 @@
-This is my first personal website that will contain projects and hopefully YouTube videos. 
+This is my first personal website that will contain projects and inshallah YouTube videos. 
