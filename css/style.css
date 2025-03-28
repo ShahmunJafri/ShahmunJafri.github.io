@@ -1,4 +1,173 @@
-.profile-pic {
-    width: 300px;
+/* === General Styles === */
+* {
+  box-sizing: border-box;
 }
-  
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  margin: 0 0 10px;
+  color: #ffffff;
+}
+
+section {
+  padding: 40px 40px;
+  width: 100%;
+  margin: 0 auto 20px;
+}
+
+.hero {
+  background-color: #000000;
+  text-align: center;
+  padding: 20px 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.home-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.left,
+.center,
+.right {
+  flex: 1;
+  min-width: 250px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.center p {
+  max-width: 400px;
+  text-align: left;
+  margin: 0;
+}
+
+.profile-pic {
+  width: 100%;
+  max-width: 300px;
+  border: 4px solid #ffffff;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+.animated-right {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #00ffff;
+  animation: blink 1s steps(1, end) infinite;
+  padding-top: 20px;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* SECTION TITLES */
+#home > h2,
+#projects > h2,
+#contact > h2 {
+  color: #ffffff;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#projects {
+  text-align: center;
+}
+
+.project-category {
+  flex: 1;
+  min-width: 250px;
+}
+
+.project-category h3 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.project-category ul,
+.project-category p {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.project-category li {
+  margin: 8px 0;
+}
+
+.project-category a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.project-category a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+.project-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* === Contact Section === */
+#contact p {
+  font-size: 1rem;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 20px;
+}
+
+/* === Media Queries for Responsiveness === */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  section {
+    padding: 40px 15px;
+  }
+} 
