@@ -30,7 +30,7 @@ section {
 .hero {
   background-color: #000000;
   text-align: center;
-  padding: 20px 20px;
+  padding: 0px 20px;
 }
 
 .hero h1 {
@@ -68,29 +68,36 @@ section {
 }
 
 .center p {
-  max-width: 400px;
-  text-align: left;
+  max-width: 500px;
+  text-align: center;
   margin: 0;
 }
 
 .profile-pic {
   width: 100%;
-  max-width: 300px;
+  max-width: 500px;
   border: 4px solid #ffffff;
   object-fit: cover;
   display: block;
   margin: 0 auto;
 }
 
-.animated-right {
+.right {
   text-align: center;
-  font-size: 1.1rem;
-  color: #00ffff;
-  animation: blink 1s steps(1, end) infinite;
+  font-size: 3rem;
+  color: #ffffff;
   padding-top: 20px;
 }
 
+#cursor {
+  color: #ffffff;
+  animation: blink 1s linear infinite;
+}
+
 @keyframes blink {
+  0% {
+    opacity: 100;
+  }
   50% {
     opacity: 0;
   }
@@ -149,7 +156,6 @@ section {
   flex-wrap: wrap;
 }
 
-/* === Contact Section === */
 #contact p {
   font-size: 1rem;
   text-align: center;
@@ -157,7 +163,6 @@ section {
   margin-top: 20px;
 }
 
-/* === Media Queries for Responsiveness === */
 @media (max-width: 600px) {
   .hero h1 {
     font-size: 2rem;
@@ -168,6 +173,6 @@ section {
   }
 
   section {
-    padding: 40px 15px;
+    padding: 0px 15px;
   }
 } 
