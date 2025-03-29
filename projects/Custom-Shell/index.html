@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+      <meta charset="utf-8" /> 
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Custom Shell Project</title>
+      <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Custom Shell Project</h1>
+      <p>A mini command-line interpreter written in C with support for pipes, redirection, and background processes.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Overview</h2>
+            <p>This project is a custom-built shell written entirely in C. It mimics the behavior of a Unix terminal, supporting basic built-in commands (<code>cd</code>, <code>exit</code>, etc.), piping (<code>|</code>), input/output redirection (<code><</code>, <code>></code>), and background execution (<code>&</code>). It was built to deepen my understanding of process creation, forking, and inter-process communication in operating systems.</p>
+        </section>
+        
+        <section>
+            <h2>Features</h2>
+            <ul>
+              <li>Command parsing and tokenization</li>
+              <li>Execution of built-in and external commands</li>
+              <li>Support for I/O redirection (<code><</code>, <code>></code>)</li>
+              <li>Support for pipelines (<code>|</code>)</li>
+              <li>Background execution (<code>&</code>)</li>
+            </ul>
+          </section>
+      
+          <section>
+            <h2>Demo</h2>
+            <p>Here's a quick demo of the shell in action:</p>
+            <img src="images/shell-demo.gif" alt="Will Add Later" style="max-width:100%; border: 1px solid #000000;" />
+          </section>
+      
+          <section>
+            <h2>Sample Code</h2>
+            <pre><code>
+void parse_command(char *command, struct pish_arg *arg)
+{
+    // TODO
+    // 1. Clear out the arg struct
+    // 2. Parse the `command` buffer and update arg->argc & arg->argv.
+    arg->argc = 0;
+    char *token = strtok(command, " \t\n");
+    while (token != NULL && arg->argc < MAX_ARGC - 1) {
+        arg->argv[arg->argc++] = token;
+        token = strtok(NULL, " \t\n");
+    }	
+                
+    arg->argv[arg->argc] = NULL;
+}
+            </code></pre>
+          </section>
+      
+          <section>
+            <h2>Explore the Code</h2>
+            <p>Check out the full project on <a href="https://github.com/ShahmunJafri/Custom-Shell" target="_blank">GitHub</a>, or <a href="Custom-Shell-main.zip" download>download it</a> directly.</p>
+          </section>
+      
+          <section>
+            <h2>What I Learned</h2>
+            <p>This project strengthened my understanding of how Unix systems manage processes. 
+                I learned how to fork child processes, manipulate file descriptors for I/O redirection, 
+                and implement a command parser from scratch.</p>
+          </section>
+
+
+    </main>
+  
+    <footer>
+      <p><a href="../index.html">← Back to Projects</a></p>
+    </footer>
+  </body>
+</html>
