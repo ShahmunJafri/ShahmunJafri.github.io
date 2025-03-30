@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+      <meta charset="utf-8" /> 
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Heap Allocator</title>
+      <link rel="stylesheet" href="../../css/project.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Custom Heap Allocator</h1>
+      <p>A customly made heap allocator in C. This allocator is a completion of the basic
+        free and malloc function. This also has the double-free problem solved. It uses 
+        best fit for the memory allocation.
+      </p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Overview</h2>
+            <p>This project is a custom-built allocator written entirely in C. It mimics the behavior memory allocation in C.
+                It does not yet support calloc or realloc. It can allocate any variable since it uses void pointers.
+                The vmalloc function returns a pointer to the memory allocated.
+        </section>
+        
+        <section>
+            <h2>Features</h2>
+            <ul>
+                <li>Implemented a custom heap allocator in C with manual memory management</li>
+                <li>Designed and integrated custom versions of <code>malloc</code> and <code>free</code></li>
+                <li>Managed memory blocks with metadata headers for allocation tracking</li>
+                <li>Handled splitting and coalescing of memory blocks to reduce fragmentation</li>
+                <li>Included error checking and boundary handling for robustness</li>
+                
+            </ul>
+          </section>
+      
+          <section>
+            <h2>Demo</h2>
+            <p>Here's a quick demo of heap allocator in action:</p>
+            <img src="images/shell-demo.gif" alt="Will Add Later (youtube video)" style="max-width:100%; border: 1px solid #000000;" />
+          </section>
+      
+          <section>
+            <h2>Sample Code</h2>
+            <pre><code>
+struct block_header* best_fit(struct block_header* header, size_t size){
+    struct block_header* current = header;
+    struct block_header* goal = NULL;
+    size_t current_size;
+                        
+    while(current->size_status != VM_ENDMARK){
+        current_size = BLKSZ(current);
+            int isallocated = current->size_status & VM_BUSY;
+                        
+            if(current_size == size && !isallocated){
+                return current;
+            } else if(current_size > size && (goal == NULL || BLKSZ(goal) > current_size) && !isallocated){
+                goal = current;
+            }
+        current = (struct block_header*)((char*)current + current_size);
+    }
+                    
+    return goal;
+}
+            </code></pre>
+          </section>
+      
+          <section>
+            <h2>Explore the Code</h2>
+            <p>Check out the full project on <a href="https://github.com/ShahmunJafri/Custom-Heap-Allocator/" target="_blank">GitHub</a>, or <a href="Custom-Heap-Allocator-main.zip" download>download it</a> directly.</p>
+          </section>
+      
+          <section>
+            <h2>What I Learned</h2>
+            <p>This project strengthened my understanding of how C allocate memory. 
+            I learned memory allocation works and how block splitting and merging works.
+            . It strengthened my grasp of pointer arithmetic, data structures, and systems-level debugging.
+            </p>
+          </section>
+
+
+    </main>
+  
+    <footer>
+      <p><a href="../index.html">← Back to Projects</a></p>
+    </footer>
+  </body>
+</html>
