@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+      <meta charset="utf-8" /> 
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Currency Exchange</title>
+      <link rel="stylesheet" href="../../css/project.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Currency Exchange</h1>
+      <p>This project implements a hash table in C++ using quadratic probing for collision resolution 
+        and storing custom Currency objects—specifically Krone, which inherits from Currency.
+      </p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Overview</h2>
+            <p>This project implements a custom hash table in C++ designed to store and manage Currency objects—specifically a subclass called Krone. 
+              The primary goal is to explore the mechanics of hashing, collision resolution, and 
+              performance analysis in a controlled environment using object-oriented programming. 
+              The hash table uses a custom hash function based on the values of notes and coins in the Currency object. 
+              To handle collisions, it employs quadratic probing, which incrementally checks new indices 
+              using a squared offset to reduce clustering.</p>
+        </section>
+        
+        <section>
+            <h2>Features</h2>
+            <ul>
+              <li>Implemented a custom hash table in C++ for storing Currency objects</li>
+              <li>Used a custom hash function: <code>(notes * m + coins * n) % size</code> with <code>m = 2</code> and <code>n = 3</code></li>
+              <li>Handled collisions using quadratic probing: <code>(index + i*i) % size</code></li>
+              <li>Supported insertion by hashing Currency objects and probing until an empty slot is found</li>
+              <li>Included search functionality using the same hash and probing logic</li>
+              <li>Tracked metrics including number of items, total collisions, and load factor</li>
+              <li>Interfaced with a subclass called <code>Krone</code> that extends the <code>Currency</code> class</li>
+          </ul>
+          
+          
+          </section>
+      
+          <section>
+            <h2>Demo</h2>
+            <p>Here's a quick demo of heap allocator in action:</p>
+            <img src="images/shell-demo.gif" alt="Will Add Later (youtube video)" style="max-width:100%; border: 1px solid #000000;" />
+          </section>
+      
+          <section>
+            <h2>Sample Code</h2>
+            <pre><code>
+void hash(Currency* current) {
+  int hash_value = hashValue(current);
+  int i = 0;
+  while (table[hash_value].isEqual(nullptr)) {
+    hash_value = quadraticProbe(hash_value, i);
+    i++;
+    totalCollision++;
+  }
+  numberOfItems++;
+  //table[hash_value] = new Krone(current);
+  table[hash_value].setCoins(current->getCoins());
+  table[hash_value].setNotes(current->getNotes());
+}
+            </code></pre>
+          </section>
+      
+          <section>
+            <h2>Explore the Code</h2>
+            <p>Check out the full project on <a href="https://github.com/ShahmunJafri/Currency-Exchange-Project" target="_blank">GitHub</a>, or <a href="Currency-Exchange-Project-main.zip" download>download it</a> directly.</p>
+          </section>
+      
+          <section>
+            <h2>What I Learned</h2>
+            <p>Through this project, I gained a deeper understanding of how hash tables function at a low level, especially the importance of 
+              crafting effective hash functions and handling collisions efficiently. 
+              Implementing quadratic probing helped me explore different strategies for 
+              resolving collisions and managing clustering. I also learned how to design data structures that interact with custom objects, 
+              which improved my grasp of object-oriented programming concepts like inheritance and polymorphism. Additionally, 
+              tracking performance metrics like load factor and collision count gave me insight into evaluating 
+              the efficiency and scalability of data structures in real-world scenarios.
+            </p>
+          </section>
+
+
+    </main>
+  
+    <footer>
+      <p><a href="../index.html">← Back to Projects</a></p>
+    </footer>
+  </body>
+</html>

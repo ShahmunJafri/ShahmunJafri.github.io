@@ -3,16 +3,15 @@ function sleep(ms) {
 }
   
   const phrases = [
-    'Converging...',
-    'theoretical mathematics...',
-    'and data...',
-    'to upscale...',
-    'Artificial Intelligence'
+    'programming.',
+    'weightlifting.',
+    'hiking.',
+    'cooking.',
   ];
   
   const el = document.getElementById("typewriter");
   
-  let sleepTime = 60;
+  let sleepTime = 100;
   let curPhraseIndex = 0;
   //typewriting animation
   async function writeLoop() {
@@ -25,7 +24,7 @@ function sleep(ms) {
         await sleep(sleepTime);
       }
   
-      await sleep(sleepTime * 8);
+      await sleep(sleepTime * 10);
   
       for (let i = curWord.length; i > 0; i--) {
         el.innerText = curWord.substring(0, i - 1);
@@ -37,6 +36,7 @@ function sleep(ms) {
       curPhraseIndex = (curPhraseIndex + 1) % phrases.length;
     }
   }
+  
   
   //call the needed animation here
   window.addEventListener("DOMContentLoaded", () => {

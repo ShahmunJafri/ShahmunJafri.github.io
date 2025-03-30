@@ -85,7 +85,7 @@ section {
 .right {
   text-align: center;
   font-size: 3rem;
-  color: #ffffff;
+  color: #ff9100;
   padding-top: 20px;
 }
 
@@ -176,3 +176,8 @@ section {
     padding: 0px 15px;
   }
 } 
+
+.orange {
+  color: #ff9100;
+}
+
