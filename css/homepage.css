@@ -181,3 +181,74 @@ section {
   color: #ff9100;
 }
 
+
+.project-thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.project-thumbnail {
+  display: block;
+  width: 300px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+  background-color: #fff;
+}
+
+.project-thumbnail:hover {
+  transform: scale(1.03);
+}
+
+.project-thumbnail img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.project-thumbnail p {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.thumbnail-image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.thumbnail-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thumbnail-title {
+  position: absolute;
+  top: 0; /* Title at the top of the image */
+  width: 100%;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+}
+
+.project-thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center; /* ✨ This centers the thumbnails */
+}

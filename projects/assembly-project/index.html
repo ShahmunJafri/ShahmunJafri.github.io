@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assembly Sorting Project</title>
+    <link rel="stylesheet" href="../../css/project.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Assembly Sorting Project</h1>
+      <p>An x86 Assembly project written using Irvine32, focused on building and using procedures for arithmetic and screen control operations.</p>
+    </header>
+
+    <main>
+      <section>
+        <h2>Overview</h2>
+        <p>This Assembly project demonstrates how to create and use procedures in x86 Assembly language. Built using Irvine32, it guides users through reading inputs, performing addition and subtraction, managing cursor positions on the screen, and responding to keyboard input. The project features clean separation of logic using multiple custom procedures and leverages structured looping with no hardcoded inputs.</p>
+      </section>
+
+      <section>
+        <h2>Features</h2>
+        <ul>
+          <li>Reads two integer inputs from the user</li>
+          <li>Displays sum and difference results using procedures</li>
+          <li>Cursor control using <code>gotoxy</code> via the <code>locate</code> procedure</li>
+          <li>Screen clearing and pause with keypress</li>
+          <li>Modular code design with reusable procedures</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Demo</h2>
+        <p>Below is a placeholder for a potential demo image or animation:</p>
+        <img src="images/assembly-demo.gif" alt="Assembly demo" style="max-width:100%; border: 1px solid #000000;" />
+      </section>
+
+      <section>
+        <h2>Sample Code</h2>
+        <pre><code>
+input PROC
+    call locate
+    mov edx, OFFSET prompt1
+    call WriteString
+    call ReadInt
+    mov first, eax
+    call locate
+    mov edx, OFFSET prompt2
+    call WriteString
+    call ReadInt
+    mov second, eax
+    ret
+input ENDP
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Explore the Code</h2>
+        <p>Check out the full project on <a href="https://github.com/ShahmunJafri/Assembly-Sorting-Project/" target="_blank">GitHub</a>, or <a href="Assembly-Sorting-Project-main.zip" download>download it</a> directly.</p>
+      </section>
+
+      <section>
+        <h2>What I Learned</h2>
+        <p>This project deepened my understanding of low-level programming and how computers handle procedures, memory, screen output, and user input. Writing logic in Assembly helped solidify my grasp of the stack, registers, and control flow without relying on high-level abstractions.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="../index.html">← Back to Projects</a></p>
+    </footer>
+  </body>
+</html>
