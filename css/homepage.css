@@ -252,3 +252,21 @@ section {
   gap: 16px;
   justify-content: center; /* ✨ This centers the thumbnails */
 }
+
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 3rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+  color: #ff9100;
+}
