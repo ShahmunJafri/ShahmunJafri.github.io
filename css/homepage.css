@@ -236,10 +236,10 @@ section {
 
 .thumbnail-title {
   position: absolute;
-  top: 0; /* Title at the top of the image */
+  top: 0; 
   width: 100%;
   padding: 8px;
-  background: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
+  background: rgba(0, 0, 0, 0.6);
   color: #ffffff;
   font-weight: bold;
   font-size: 14px;
@@ -250,7 +250,7 @@ section {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  justify-content: center; /* ✨ This centers the thumbnails */
+  justify-content: center; 
 }
 
 .social-icons {
@@ -269,4 +269,42 @@ section {
 .social-icons a:hover {
   transform: scale(1.1);
   color: #ff9100;
+}
+
+
+@media (max-width: 600px) {
+  .social-icons {
+    flex-direction: column; 
+    align-items: center;    
+    gap: 20px;              
+  }
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  section {
+    padding: 0px 15px;
+  }
+
+  .social-icons {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+
+  .right h1 {
+    font-size: 1.5rem;
+  }
+
+  #cursor {
+    font-size: 1.5rem;
+  }
 }
