@@ -55,7 +55,9 @@ const phrases = [
     },
     {
       category: "Apps",
-      projects: [ ]
+      projects: [
+        "Printing Company Database"
+       ]
     }
   ];
 
